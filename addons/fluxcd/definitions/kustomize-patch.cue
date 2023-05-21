@@ -15,7 +15,12 @@
 template: {
 	patch: {
 		spec: {
+			if context.name == "helm" {
+			postRenderers: [{ kustomize: patches: parameter.patches }]
+			}
+			if context.name != "helm" {
 			patches: parameter.patches
+			}
 		}
 	}
 	parameter: {

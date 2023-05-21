@@ -15,7 +15,12 @@
 template: {
 	patch: {
 		spec: {
-			patches: parameter.patchesStrategicMerge
+			if context.name == "helm" {
+			postRenderers: [{ kustomize: patchesStrategicMerge: parameter.patchesStrategicMerge }]
+			}
+			if context.name != "helm" {
+			patches: parameter.patchesStrategicMerge	
+			}	
 		}
 	}
 
