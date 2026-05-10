@@ -2,8 +2,6 @@ module github.com/oam-dev/catalog
 
 go 1.23.8
 
-toolchain go1.24.7
-
 require (
 	github.com/Masterminds/semver/v3 v3.2.1
 	github.com/Masterminds/sprig/v3 v3.2.3
